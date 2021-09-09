@@ -17,7 +17,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
-        int actual = (int) service.AvgSales(sales);
+        int actual = (int) service.avgSales(sales);
         assertEquals(expected, actual);
     }
 
@@ -42,18 +42,18 @@ public class StatsServiceTest {
     @Test
     public void shouldGetMonthNumberBelowAvg() {
         StatsService service = new StatsService();
-        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = service.minSales(sales);
-        int expected = 9;
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int actual = service.monthNumberBelowAvg(sales);
+        int expected = 5;
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldGetMonthNumberAboveAvg() {
         StatsService service = new StatsService();
-        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = service.maxSales(sales);
-        int expected = 8;
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int actual = service.monthNumberAboveAvg(sales);
+        int expected = 5;
         assertEquals(expected, actual);
     }
 }
